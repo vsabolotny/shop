@@ -8,6 +8,9 @@ import ProductsOverviewScreen, {
 import ProductDetailScreen, {
   screenOptions as ProductDetailScreenOptions,
 } from "../screens/shop/ProductDetailScreen";
+import CartScreen, {
+  screenOptions as CartScreenOptions,
+} from "../screens/shop/CartScreen";
 
 const Stack = createStackNavigator();
 
@@ -32,6 +35,11 @@ const ProductsNavigator = () => {
         name="ProductDetail"
         component={ProductDetailScreen}
         options={ProductDetailScreenOptions}
+      />
+      <Stack.Screen
+        name="Cart"
+        component={CartScreen}
+        options={CartScreenOptions}
       />
     </Stack.Navigator>
   );
