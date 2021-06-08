@@ -1,10 +1,13 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import Colors from "../constants/colors";
 import ProductsOverviewScreen, {
   screenOptions as ProductsOverviewScreenOptions,
 } from "../screens/shop/ProductsOverviewScreen";
-import Colors from "../constants/colors";
+import ProductDetailScreen, {
+  screenOptions as ProductDetailScreenOptions,
+} from "../screens/shop/ProductDetailScreen";
 
 const Stack = createStackNavigator();
 
@@ -24,6 +27,11 @@ const ProductsNavigator = () => {
         name="ProductsOverview"
         component={ProductsOverviewScreen}
         options={ProductsOverviewScreenOptions}
+      />
+      <Stack.Screen
+        name="ProductDetail"
+        component={ProductDetailScreen}
+        options={ProductDetailScreenOptions}
       />
     </Stack.Navigator>
   );
