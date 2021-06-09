@@ -19,6 +19,9 @@ import OrdersScreen, {
 import UserProductsScreen, {
   screenOptions as userProductsScreenOptions,
 } from "../screens/user/UserProductsScreen";
+import EditProductScreen, {
+  screenOptions as EditProductScreenOptions,
+} from "../screens/user/EditProductScreen";
 
 const Stack = createStackNavigator();
 
@@ -61,6 +64,11 @@ const UserProductsNavigator = () => {
         component={UserProductsScreen}
         options={userProductsScreenOptions}
       />
+      <Stack.Screen
+        name="EditProduct"
+        component={EditProductScreen}
+        options={EditProductScreenOptions}
+      />
     </Stack.Navigator>
   );
 };
@@ -100,7 +108,9 @@ const DrawerNavigator = () => {
         name="UserProducts"
         component={UserProductsNavigator}
         options={{
-          drawerIcon: (drawerConfig) => <Ionicons name="ios-create" size={23} />,
+          drawerIcon: (drawerConfig) => (
+            <Ionicons name="ios-create" size={23} />
+          ),
         }}
       />
     </Drawer.Navigator>
