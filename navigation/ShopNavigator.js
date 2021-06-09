@@ -16,6 +16,9 @@ import CartScreen, {
 import OrdersScreen, {
   screenOptions as ordersScreenOptions,
 } from "../screens/shop/OrdersScreen";
+import UserProductsScreen, {
+  screenOptions as userProductsScreenOptions,
+} from "../screens/user/UserProductsScreen";
 
 const Stack = createStackNavigator();
 
@@ -50,6 +53,18 @@ const ProductsNavigator = () => {
   );
 };
 
+const UserProductsNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen
+        name="UserProducts"
+        component={UserProductsScreen}
+        options={userProductsScreenOptions}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const Drawer = createDrawerNavigator();
 
 const OrdersNavigator = () => {
@@ -79,6 +94,13 @@ const DrawerNavigator = () => {
         component={OrdersNavigator}
         options={{
           drawerIcon: (drawerConfig) => <Ionicons name="list" size={23} />,
+        }}
+      />
+      <Drawer.Screen
+        name="UserProducts"
+        component={UserProductsNavigator}
+        options={{
+          drawerIcon: (drawerConfig) => <Ionicons name="ios-create" size={23} />,
         }}
       />
     </Drawer.Navigator>
