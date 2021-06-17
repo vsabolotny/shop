@@ -1,8 +1,9 @@
 import React from "react";
 import "react-native-gesture-handler";
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
+import ReduxThunk from "redux-thunk";
 //import { composeWithDevTools } from "redux-devtools-extension";
 
 import productsReducer from "./store/reducers/products";
@@ -17,7 +18,7 @@ const rootReducer = combineReducers({
 });
 
 //const store = createStore(rootReducer, composeWithDevTools);
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 export default function App() {
   return (
